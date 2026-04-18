@@ -1,0 +1,160 @@
+-----------------------------------------Theory----------------------------------------
+#)LAB 1: Basic Sorting & Search Algorithms
+Bubble Sort - Comparison-based sorting that repeatedly steps through the list, compares adjacent elements, and swaps them if they're in the wrong order. Time Complexity: O(n²)
+
+Insertion Sort - Builds the sorted array one item at a time by inserting each element into its correct position in the already-sorted portion. Time Complexity: O(n²)
+
+Selection Sort - Divides the array into sorted and unsorted portions, repeatedly finding the minimum element from the unsorted part and moving it to the sorted part. Time Complexity: O(n²)
+
+Min-Max Search - Simultaneously finds both the minimum and maximum elements in an array by comparing pairs of elements. Uses fewer comparisons than finding min and max separately.
+
+Binary Search Tree (BST) - A tree-based data structure where each node has at most two children. Left subtree contains smaller values, right subtree contains larger values. Supports insertion, searching, and traversal (inorder, preorder, postorder).
+
+#)LAB 2: Divide & Conquer Algorithms
+Merge Sort - Divide-and-conquer algorithm that recursively divides the array into halves, sorts them, and merges them back together. Time Complexity: O(n log n)
+
+Quick Sort - Divide-and-conquer algorithm using a pivot element to partition the array, then recursively sorts the subarrays. Time Complexity: O(n log n) average, O(n²) worst case
+
+Randomized Quick Sort - Variation of Quick Sort that randomly selects a pivot element instead of always choosing the first element, improving average-case performance and avoiding worst-case scenarios.
+
+#)LAB 3: Greedy Algorithms & Sorting Variants
+Fractional Knapsack - Greedy algorithm where you can take fractions of items. Sorts items by profit-to-weight ratio in descending order and greedily fills the knapsack with items with the highest ratios.
+
+Heap Sort - Builds a heap data structure (min-heap and max-heap) and repeatedly extracts the root element. Uses heapify operations to maintain heap property. Time Complexity: O(n log n)
+
+Job Sequencing with Deadlines - Greedy algorithm that sorts jobs by profit in descending order and assigns them to the latest available slot before their deadline to maximize profit.
+
+Kruskal's Algorithm - Greedy algorithm for finding Minimum Spanning Tree (MST). Sorts edges by weight and uses Union-Find to add edges without creating cycles. Time Complexity: O(E log E)
+
+Prim's Algorithm - Greedy algorithm for finding MST by starting from a vertex and repeatedly adding the minimum weight edge that connects a vertex in MST to a vertex outside MST. Time Complexity: O(V²)
+
+#)LAB 4: Dynamic Programming & All-Pairs Shortest Path
+Floyd-Warshall Algorithm - Dynamic programming algorithm that computes shortest paths between all pairs of vertices in a weighted graph. Uses intermediate vertices k to find shorter paths. Time Complexity: O(V³)
+
+0/1 Knapsack - Dynamic programming algorithm where you can either take or not take each item (no fractions allowed). Maximizes value while staying within weight capacity. Typically uses a DP table approach.
+
+-------------------------------------Algorithm----------------------------------------
+LAB 1
+Bubble Sort
+1. Compare adjacent elements
+2. Swap if left > right
+3. Repeat for n passes
+4. After each pass, largest element bubbles to end
+
+Insertion Sort
+1. Start from 2nd element (key)
+2. Compare with elements to the left
+3. Shift larger elements one position right
+4. Insert key at correct position
+5. Repeat until array is sorted
+
+Selection Sort
+1. Find minimum element in unsorted part
+2. Swap with first element of unsorted part
+3. Move boundary between sorted/unsorted right
+4. Repeat until array is sorted
+
+Min-Max Search
+1. Use two pointers: start and end
+2. For each position, find min and max together
+3. Swap min with start, max with end
+4. Move pointers inward
+5. Reduces comparisons by pairing elements
+
+Binary Search Tree
+1. Create root node when inserting first element
+2. For each new element:
+   - If smaller than node, go left
+   - If larger than node, go right
+3. Insert at empty spot
+4. Inorder traversal gives sorted output
+
+LAB 2
+Merge Sort
+1. Divide array into two halves recursively
+2. Recursively sort left and right halves
+3. Merge two sorted halves:
+   - Compare first elements of both halves
+   - Add smaller one to result
+   - Move pointer of that half
+4. Repeat until one half is empty, add remaining
+
+Quick Sort
+1. Choose pivot (first element)
+2. Partition: move smaller elements left, larger right
+3. Recursively sort left subarray (< pivot)
+4. Recursively sort right subarray (> pivot)
+5. Pivot is now in correct position
+
+Randomized Quick Sort
+Same as Quick Sort, but:
+- Randomly select pivot instead of first element
+- Reduces chance of worst-case O(n²)
+
+LAB 3
+Fractional Knapsack
+1. Calculate profit/weight ratio for each item
+2. Sort items by ratio (descending)
+3. For each item in sorted order:
+   - If item fits completely, take it
+   - Else take fractional part to fill knapsack
+4. Return total value
+
+Heap Sort
+1. Build max-heap from array
+2. Swap root (max) with last element
+3. Reduce heap size by 1
+4. Heapify root to maintain heap property
+5. Repeat until heap size is 1
+
+Job Sequencing
+1. Sort jobs by profit (descending)
+2. Find maximum deadline
+3. For each job:
+   - Find latest available slot before deadline
+   - Assign job to that slot
+4. Return jobs in deadline order
+
+Kruskal's Algorithm
+1. Sort all edges by weight (ascending)
+2. Use Union-Find data structure
+3. For each edge in sorted order:
+   - If endpoints are in different sets, add edge
+   - Union the two sets
+4. Stop when all vertices are connected
+
+Prim's Algorithm
+1. Start with any vertex in MST
+2. While vertices exist outside MST:
+   - Find minimum weight edge from MST to outside vertex
+   - Add that vertex to MST
+   - Update minimum edges to remaining vertices
+3. Repeat until all vertices in MST
+
+LAB 4
+Floyd-Warshall
+1. Initialize distance matrix = adjacency matrix
+2. For each intermediate vertex k:
+   - For each pair (i,j):
+     - If path through k is shorter: dist[i][j] = dist[i][k] + dist[k][j]
+3. Repeat for all vertices
+4. Matrix contains shortest paths between all pairs
+
+0/1 Knapsack
+1. For each item: calculate value/weight ratio
+2. Sort items by ratio (descending)
+3. For each item:
+   - If fits in capacity: include it
+   - Otherwise: try fractional part
+4. Return maximum value achieved
+
+
+---------------------------------Conclusion-------------------------------------------
+
+Lab 1 shows that different sorting/searching methods solve the same problem in different ways and builds a strong foundation: first learn simple array-based sorting, then move to tree-based data organization.
+
+Lab 2 introduces Divide and Conquer through Merge Sort, Quick Sort, and Randomized Quick Sort and shows that smarter partitioning and recursion can sort much faster than basic (O(n^2)) methods, especially for large inputs.
+
+Lab 3 focuses on greedy methods and graph algorithms and shows how greedy thinking helps make fast and effective choices in optimization and graph problems.
+
+Lab 4 covers dynamic programming and shortest-path optimization and shows how complex optimization problems can be solved systematically using step-by-step state updates, leading to correct and efficient solutions.

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Projects Table</title>
+    <style>
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tfoot td {
+            background-color: #e6e6e6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Projects Table</h1>
+    
+    <table border="2">
+        <thead>
+            <tr>
+                <th rowspan="2">S.N</th>
+                <th rowspan="2">Project Name</th>
+                <th colspan="2">Student Details</th>
+                <th rowspan="2">Remarks</th>
+            </tr>
+            <tr>
+                <th>Student Name</th>
+                <th>Exam Roll Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>E-Commerce Website</td>
+                <td>Ram Sharma</td>
+                <td>101</td>
+                <td>Completed</td>
+            </tr>
+            <tr>
+                <td rowspan="2">2</td>
+                <td rowspan="2">School Management System</td>
+                <td>Sita Koirala</td>
+                <td>102</td>
+                <td rowspan="2">In Progress</td>
+            </tr>
+            <tr>
+                <td>Hari Gurung</td>
+                <td>103</td>
+            </tr>
+            <tr>
+                <td rowspan="3">3</td>
+                <td rowspan="3">Weather App</td>
+                <td>Gita Shrestha</td>
+                <td>104</td>
+                <td rowspan="3">Completed</td>
+            </tr>
+            <tr>
+                <td>Krishna Thapa</td>
+                <td>105</td>
+            </tr>
+            <tr>
+                <td>Anita Rai</td>
+                <td>106</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Health Monitoring System</td>
+                <td>Bikash Yadav</td>
+                <td>107</td>
+                <td>Pending</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">Total: 4 projects involving 7 students</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

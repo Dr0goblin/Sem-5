@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 3: Fibonacci</title>
+</head>
+<body>
+    <h2>Task 3: Fibonacci Series</h2>
+    <div id="fibonacci"></div>
+
+    <script>
+        let fib = [0, 1];
+        let n = 15; // First 15 numbers
+        
+        for(let i = 2; i < n; i++) {
+            fib[i] = fib[i-1] + fib[i-2];
+        }
+        
+        document.getElementById('fibonacci').innerHTML = 
+            "Fibonacci Series: " + fib.join(", ");
+    </script>
+</body>
+</html>

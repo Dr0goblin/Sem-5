@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2: Table & Pattern</title>
+</head>
+<body>
+    <h2>Task 2: Table of 12 & Pattern</h2>
+    
+    <h3>Multiplication Table of 12:</h3>
+    <div id="table"></div>
+    
+    <h3>Star Pattern:</h3>
+    <div id="pattern"></div>
+
+    <script>
+        // Table of 12
+        let tableHTML = "";
+        for(let i = 1; i <= 10; i++) {
+            tableHTML += `12 × ${i} = ${12 * i}<br>`;
+        }
+        document.getElementById('table').innerHTML = tableHTML;
+        
+        // Star pattern
+        document.getElementById('pattern').innerHTML = "*<br>***<br>*****";
+    </script>
+</body>
+</html>

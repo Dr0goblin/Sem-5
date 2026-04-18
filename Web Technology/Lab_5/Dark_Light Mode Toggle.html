@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dark/Light Mode Toggle</title>
+    <style>
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+        body.dark-mode {
+            background-color: #333;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body id="body" class="light-mode">
+    <h1>Dark/Light Mode Toggle</h1>
+    <button onclick="toggleMode()">Toggle Mode</button>
+    <p>This mode will persist when you reload the page.</p>
+
+    <script>
+        // Function to set cookie
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+        
+        // Function to get cookie
+        function getCookie(name) {
+            const cookies = document.cookie.split(';');
+            for (let cookie of cookies) {
+                const [cookieName, cookieValue] = cookie.trim().split('=');
+                if (cookieName === name) {
+                    return cookieValue;
+                }
+            }
+            return "";
+        }
+        
+        // Function to toggle mode
+        function toggleMode() {
+            const body = document.getElementById('body');
+            
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                setCookie('theme', 'dark', 7); // Store for 7 days
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                setCookie('theme', 'light', 7);
+            }
+        }
+        
+        // Check saved theme on page load
+        window.onload = function() {
+            const theme = getCookie('theme');
+            const body = document.getElementById('body');
+            
+            if (theme === 'dark') {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            }
+        };
+    </script>
+</body>
+</html>

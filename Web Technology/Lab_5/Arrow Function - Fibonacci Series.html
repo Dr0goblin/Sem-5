@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrow Function Fibonacci</title>
+</head>
+<body>
+    <h1>Fibonacci Series using Arrow Function</h1>
+    <button onclick="generateFibonacci()">Generate Fibonacci Series</button>
+    <div id="output"></div>
+
+    <script>
+        // Arrow function to generate Fibonacci series
+        const generateFibonacci = () => {
+            const count = parseInt(prompt("How many Fibonacci numbers? (Enter a number):"));
+            
+            if (isNaN(count) || count <= 0) {
+                alert("Please enter a valid positive number");
+                return;
+            }
+            
+            let fib = [0, 1];
+            
+            // Using arrow function in forEach
+            Array.from({ length: count - 2 }).forEach((_, i) => {
+                fib.push(fib[i + 1] + fib[i]);
+            });
+            
+            // Display result using arrow function
+            const display = (arr) => {
+                return arr.map((num, index) => 
+                    `<p>Fibonacci[${index}] = ${num}</p>`
+                ).join('');
+            };
+            
+            document.getElementById('output').innerHTML = 
+                `<h3>Fibonacci Series (${count} numbers):</h3>` + display(fib.slice(0, count));
+        };
+    </script>
+</body>
+</html>

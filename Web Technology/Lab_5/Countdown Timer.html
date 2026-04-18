@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown Timer</title>
+</head>
+<body>
+    <h1>5-Minute Countdown Timer</h1>
+    <div id="timer" style="font-size: 48px; font-weight: bold;">05:00</div>
+    <button onclick="startTimer()">Start Timer</button>
+    <button onclick="resetTimer()">Reset Timer</button>
+
+    <script>
+        let countdown;
+        let totalSeconds = 300; // 5 minutes
+        
+        function startTimer() {
+            clearInterval(countdown);
+            
+            countdown = setInterval(() => {
+                totalSeconds--;
+                
+                const minutes = Math.floor(totalSeconds / 60);
+                const seconds = totalSeconds % 60;
+                
+                // Display time
+                document.getElementById('timer').textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                // Check if time is up
+                if (totalSeconds <= 0) {
+                    clearInterval(countdown);
+                    document.getElementById('timer').textContent = "00:00";
+                    alert("Time's up! 5 minutes have passed.");
+                }
+            }, 1000);
+        }
+        
+        function resetTimer() {
+            clearInterval(countdown);
+            totalSeconds = 300;
+            document.getElementById('timer').textContent = "05:00";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 4: Multiple Students</title>
+</head>
+<body>
+    <h2>Task 4: Multiple Students</h2>
+    <button onclick="addStudents()">Add Students</button>
+    <div id="output"></div>
+
+    <script>
+        let students = [];
+        
+        function addStudents() {
+            let more = true;
+            
+            while(more) {
+                let name = prompt("Enter Student Name:");
+                let roll = prompt("Enter Roll Number:");
+                let dept = prompt("Enter Department:");
+                let project = prompt("Enter Project Title:");
+                
+                students.push({
+                    name: name,
+                    roll: roll,
+                    dept: dept,
+                    project: project
+                });
+                
+                more = confirm("Add another student?");
+            }
+            
+            showStudents();
+        }
+        
+        function showStudents() {
+            let html = "<h3>All Students:</h3>";
+            
+            students.forEach((student, i) => {
+                html += `
+                    <p><strong>Student ${i+1}:</strong> ${student.name}, 
+                    ${student.roll}, ${student.dept}, ${student.project}</p>
+                `;
+            });
+            
+            document.getElementById('output').innerHTML = html;
+        }
+    </script>
+</body>
+</html>

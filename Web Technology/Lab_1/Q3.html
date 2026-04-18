@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .search-container {
+            max-width: 400px;
+            margin: 50px auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            gap: 10px;
+        }
+        input[type="search"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Our Website</h1>
+    
+    <div class="search-container">
+        <form method="get" action="search-results.html">
+            <input type="search" name="q" placeholder="Enter search terms..." required>
+            <button type="submit">Search</button>
+        </form>
+        
+        <p><strong>Note:</strong> This form uses the GET method. When you submit the form, the search query will appear in the URL.</p>
+        <p>Example: <code>search-results.html?q=your+search+query</code></p>
+    </div>
+</body>
+</html>

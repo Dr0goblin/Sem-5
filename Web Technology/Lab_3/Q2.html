@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Table</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .title { text-align: center; color: #333; }
+        
+        /* Table using divs */
+        .table { 
+            border: 2px solid #333;
+            margin: 20px auto;
+            width: 90%;
+        }
+        .row { display: flex; }
+        .header { 
+            background: #007bff; 
+            color: white;
+            font-weight: bold;
+        }
+        .cell { 
+            padding: 12px;
+            border: 1px solid #ddd;
+            flex: 1;
+        }
+        .row:nth-child(even) { background: #f9f9f9; }
+        
+        /* Status colors */
+        .status-complete { color: green; }
+        .status-progress { color: orange; }
+        .status-pending { color: red; }
+    </style>
+</head>
+<body>
+    <h1 class="title">Project Details</h1>
+    
+    <div class="table">
+        <!-- Header Row -->
+        <div class="row header">
+            <div class="cell">Project Name</div>
+            <div class="cell">Manager</div>
+            <div class="cell">Status</div>
+            <div class="cell">Due Date</div>
+        </div>
+        
+        <!-- Data Rows -->
+        <div class="row">
+            <div class="cell">Website Redesign</div>
+            <div class="cell">John cina</div>
+            <div class="cell status-complete">Complete</div>
+            <div class="cell">2025-06-30</div>
+        </div>
+        
+        <div class="row">
+            <div class="cell">Mobile App</div>
+            <div class="cell">Jane Smith</div>
+            <div class="cell status-progress">In Progress</div>
+            <div class="cell">2022-08-15</div>
+        </div>
+        
+        <div class="row">
+            <div class="cell">Database Update</div>
+            <div class="cell">Mike Johnson</div>
+            <div class="cell status-pending">Pending</div>
+            <div class="cell">2020-09-01</div>
+        </div>
+        
+        <div class="row">
+            <div class="cell">Marketing Campaign</div>
+            <div class="cell">Sarah Wilson</div>
+            <div class="cell status-progress">In Progress</div>
+            <div class="cell">2003-07-20</div>
+        </div>
+        
+        <div class="row">
+            <div class="cell">System Upgrade</div>
+            <div class="cell">Tom Brown</div>
+            <div class="cell status-pending">Pending</div>
+            <div class="cell">2023-10-10</div>
+        </div>
+    </div>
+    
+    <footer><p style="text-align: center;">&copy; 2026 Basant.</p></footer>
+</body>
+</html>

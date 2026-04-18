@@ -1,0 +1,76 @@
+Files created:
+
+setup.sql
+db.php
+index.php
+failed_parents.php
+constructor_destructor.php
+inheritance_polymorphism.php
+static_members.php
+README.md
+
+What is covered:
+CRUD in PHP:
+Table students defined in setup.sql
+5 student records inserted in setup.sql
+Display table with Edit/Delete in index.php
+Edit marks implemented in index.php
+Delete record implemented in index.php
+Analytics on same table:
+Highest marks student in index.php
+Lowest marks student in index.php
+Total students in index.php
+Average marks in index.php
+Sorting + pass/fail count:
+Ascending display by marks in index.php
+Pass/Fail counts using GROUP BY + ORDER BY in index.php
+JOIN demonstration:
+Additional table student_details in setup.sql
+Parent name and email of failed students shown in failed_parents.php
+Constructor and destructor in OOP:
+Demonstrated in constructor_destructor.php
+Inheritance and polymorphism:
+Parent class Lecturer
+Child classes Parttime and Fulltime
+Overridden methods for polymorphism
+Implemented in inheritance_polymorphism.php
+Access modifiers + getters/setters:
+public/protected/private usage in Lecturer class
+getter/setter methods used for private data
+Implemented in inheritance_polymorphism.php
+Static members:
+Static property and static method usage in static_members.php
+Validation note:
+
+Editor diagnostics show no file errors.
+PHP CLI is not installed in the current terminal environment, so command-line php lint could not be executed here.
+Run steps:
+
+Import setup.sql into MySQL.
+Update DB credentials in db.php if your MySQL user/password differs.
+Run Apache + MySQL (XAMPP/WAMP/Laragon).
+Open index.php in browser through localhost.
+
+#can you make it simple ?
+I’ll simplify the project by rewriting the main page into a cleaner, minimal version while keeping all required lab features intact, then I’ll also shorten the README so it’s easier to follow.
+
+I’m now simplifying index.php into a shorter, easy-to-read version with the same CRUD + report features, and then I’ll trim README.md to quick run steps.
+
+I’ve simplified the main page and docs; now I’m quickly checking for editor errors to make sure the simplified version is clean.
+
+Checked index.php, README.md, no problems found
+
+Yes. I simplified it.
+
+What I changed:
+
+Rewrote index.php to a shorter, cleaner version with:
+Simple add form
+Simple edit marks flow
+Delete action
+Student table sorted by marks ascending
+Basic report list (highest, lowest, total, average)
+Pass/fail count table
+Simplified README.md to quick run steps and demo checklist.
+Everything required is still there, just easier to read and present.
+If you want, I can also make the OOP files shorter in the same style.
